@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg:       #0a0b0d;
+  --bg2:      #0d0f12;
+  --bg3:      #131619;
+  --surface:  #181c21;
+  --surface2: #1e2329;
+  --border:   #252b33;
+  --border2:  #2e3640;
+  --accent:   #00C2FF;
+  --accent2:  #FF4D6D;
+  --accent3:  #FFB830;
+  --accent4:  #7C5CFC;
+  --accent5:  #00E5A0;
+  --text:     #DDE5EE;
+  --text2:    #7B8FA8;
+  --text3:    #3D4F62;
+  --font-display: 'Sora', sans-serif;
+  --font-body: 'Space Grotesk', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+  --radius: 12px;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Subtle dot grid background */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(0,194,255,0.06) 1px, transparent 1px);
+  background-size: 36px 36px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse 100% 60% at 50% 0%, transparent 30%, var(--bg) 85%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+#root { position: relative; z-index: 1; }
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg2); }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+@keyframes fadeUp    { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fadeIn    { from { opacity:0; } to { opacity:1; } }
+@keyframes pulse     { 0%,100% { opacity:1; } 50% { opacity:0.25; } }
+@keyframes spin      { to { transform:rotate(360deg); } }
+@keyframes blink     { 0%,100% { opacity:1; } 50% { opacity:0; } }
+@keyframes glow-pulse { 0%,100% { box-shadow: 0 0 16px rgba(0,194,255,0.2); } 50% { box-shadow: 0 0 40px rgba(0,194,255,0.45); } }
+@keyframes slide-in  { from { opacity:0; transform:translateX(-12px); } to { opacity:1; transform:translateX(0); } }
+@keyframes scanline  { 0% { transform:translateY(-100%); } 100% { transform:translateY(100vh); } }
+
+.anim-fade-up  { animation: fadeUp 0.55s ease both; }
+.anim-fade-in  { animation: fadeIn 0.4s ease both; }
