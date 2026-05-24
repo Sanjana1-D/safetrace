@@ -165,3 +165,5 @@ uvicorn main:app --host 0.0.0.0 --port $PORT
 REACT_APP_API_URL=https://your-backend-url.railway.app
 npm run build
 ```
+
+### Deployment link : " https://safetrace-vu40.onrender.com"
