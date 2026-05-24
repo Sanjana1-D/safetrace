@@ -155,15 +155,11 @@ npm start
 
 ## Deployment
 
-### Backend (Railway / Render / EC2)
-```bash
+### Backend (Render)
 uvicorn main:app --host 0.0.0.0 --port $PORT
-```
 
-### Frontend (Vercel / Netlify)
-```bash
-REACT_APP_API_URL=https://your-backend-url.railway.app
+### Frontend
+REACT_APP_API_URL=https://safetrace-vu40.onrender.com
 npm run build
-```
 
 ### Deployment link : " https://safetrace-vu40.onrender.com"
