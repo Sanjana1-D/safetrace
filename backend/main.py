@@ -26,24 +26,10 @@ app.include_router(cert.router, prefix="/api/cert", tags=["Cert"])
 
 
 # Serve React static files
-app.mount("/static", StaticFiles(directory="static"), name="static")
+app.mount("/", StaticFiles(directory="static", html=True), name="static")
 
 
 @app.get("/health")
 def health():
     return {"status": "ok"}
 
-
-# Serve React app
-@app.get("/")
-async def serve_react():
-    return FileResponse("static/index.html")
-
-
-# React Router support
-@app.get("/{full_path:path}")
-async def serve_react_routes(full_path: str):
-
-    return FileResponse("static/index.html")
-
-    return FileResponse("static/index.html")
