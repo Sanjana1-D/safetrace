@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // FastAPI backend — set REACT_APP_API_URL in .env to override
-const BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:8000";
+const BASE_URL = process.env.REACT_APP_API_URL || "https://safetrace-vu40.onrender.com";
 
 const api = axios.create({ baseURL: BASE_URL, timeout: 35000 });
 
