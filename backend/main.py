@@ -43,4 +43,7 @@ async def serve_react():
 # React Router support
 @app.get("/{full_path:path}")
 async def serve_react_routes(full_path: str):
+
+    return FileResponse("static/index.html")
+
     return FileResponse("static/index.html")
